@@ -28,7 +28,7 @@ maior_menor(5, 6)
 '''
 def comp(a, b, c):
     soma = a + b
-    if soma < c:
+    if soma < c: 
         return True
     else:
         return False
