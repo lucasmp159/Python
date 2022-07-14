@@ -78,3 +78,50 @@ class ContaBancaria:
 conta1 = ContaBancaria("Lucas", 123456, 1500, True)
 print(vars(conta1)) #--> vars Transforma em dicionário
 
+
+class carro:
+    def __init__ (self, modelo, ano, velocidade, ligado):
+        self.modelo = modelo
+        self.ano = ano
+        self.velocidade = velocidade
+        self.ligado = ligado
+
+    def ligar(self):
+        if self.ligado is True:
+            print("O carro está ligado")
+        else:
+            print("O carro está desligado")
+
+    def acelerar(self):
+        if 0 <= self.velocidade <= 20:
+            print("1 Marcha")
+        elif 20 < self.velocidade < 30:
+            print("2 Marcha")
+        elif 30 < self.velocidade < 35:
+            print("3 Marcha")
+        elif 35 < self.velocidade < 45:
+            print("4 Marcha")
+        elif 45 < self.velocidade < 55:
+            print("5 Marcha")
+
+carro1 = carro("Tesla", 1994, 50, True)
+carro1.ligar()
+carro1.acelerar()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
