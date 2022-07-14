@@ -60,7 +60,7 @@ class ContaBancaria:
 
     def saque(self, valor_sacado):
         if self.saldo < valor_sacado:
-            print("SALOD INSUFICIENTE")
+            print("SALDO INSUFICIENTE")
         else:
             self.saldo -= valor_sacado
 
