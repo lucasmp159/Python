@@ -110,17 +110,25 @@ nasa_program(lista)
 '''
 
 
-nome_asteroide = input("Insira o nome do asteroide identificado: ")
-n1 = float(input("Digite o valor da distance 1: "))
-n2 = float(input("Digite o valor da distance 2: "))
-n3 = float(input("Digite o valor da distance 3: "))
-n4 = float(input("Digite o valor da distance 4: "))
-n5 = float(input("Digite o valor da distance 5: "))
-media = float((n1 + n2 + n3 + n4 + n5)/ 5)
-lista = [n1, n2, n3, n4, n5]
-D1 = {nome_asteroide:lista}
-print(D1)
-print(media)
+# Programa que mantem o registro da distância dos asteroides
+
+while True:
+    novoAsteroide = input("Existe mais asteroides para registrar? ")
+    if novoAsteroide == 's':
+        nome_asteroide = input("Insira o nome do asteroide identificado: ")
+        n1 = float(input("Digite o valor da distance 1: "))
+        n2 = float(input("Digite o valor da distance 2: "))
+        n3 = float(input("Digite o valor da distance 3: "))
+        n4 = float(input("Digite o valor da distance 4: "))
+        n5 = float(input("Digite o valor da distance 5: "))
+    else:
+        break
+    media = float((n1 + n2 + n3 + n4 + n5)/ 5)
+    lista = [n1, n2, n3, n4, n5]
+    D1 = {nome_asteroide:lista}
+    print(D1)
+    print(media)
+
 
 
 
