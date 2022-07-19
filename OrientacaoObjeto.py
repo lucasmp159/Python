@@ -129,6 +129,43 @@ f = Funcionario()
 f.falar()
 
 f.trabalhar()
+
+class estacionamento:
+    def __int__(self, tipo_do_veiculo, placa, modelo, data_entrada, data_saida):
+        self.__tipo_do_veiculo = tipo_do_veiculo
+        self.__placa = placa
+        self.__modelo = modelo
+        self.__data_entrada = data_entrada
+        self.__data_saida = data_saida
+
+    @property
+    def data_saida(self):
+        return self.__data_saida
+
+    @data_saida.setter
+    def data_saida(self, data_saida):
+        self.__data_saida = data_saida
+
+    @property
+    def data_entrada(self):
+        return self.__data_entrada
+
+    @data_entrada.setter
+    def data_entrada(self, data_entrada):
+        self.__data_entrada = data_entrada
+
+    def registro_veiculo(self):
+        self.__data_entrada = int(input("Insira a hora da entrada: "))
+
+
+    def pagamento(self):
+        self.__data_saida = int(input("Insira a hora da saída: "))
+        if self.__data_saida >= self.__data_entrada:
+            print("Calcular pagamento baseado na diferença de horário")
+        else:
+            print("Não foi possivel calcular o pagamento")
+
+
 """
 class Funcionarios:
     def __init__(self, matricula, nome, salario):
