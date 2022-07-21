@@ -1,0 +1,43 @@
+import pyodbc
+
+
+
+db = pyodbc.connect(connection_string)
+"""
+cursor = db.cursor()
+
+retorno = cursor.execute('select * from tabela')
+
+linhas = retorno.fetchall()
+"""
+
+cursor = db.cursor()
+
+resp = cursor.execute('CREATE DATABASE empresa')
+
+resp.execute('USE Empresa;')
+
+resp.execute("""
+    CREATE TABLE Funcionario(
+        id INT NOT NULL UNIQUE,
+        primeironome VARCHAR(50),
+        segundonome VARCHAR(50),
+        dataNasci DATE,
+        cpf INT NOT NULL UNNIQUE,
+        rg INT NOT NULL UNIQUE,
+        endereco VARCHAR(255),
+        cidade VARCHAR(12),
+        cidade VARCHAR(80),
+        salario FLOAT
+    );
+""")
+
+resp.execute("""
+    CREATE TABLE Departamento (
+        id INT NOT NULL UNIQUE,
+        nome VARCHAR(255),
+        localizacao VARCHAR(255)
+    );
+""")
+
+resp.commit()
