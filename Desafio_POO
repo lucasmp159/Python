@@ -1,0 +1,40 @@
+class Trilha:
+    def __init__(self, distancia_total, grau_dificuldade, localizacao, nome_trilha, pessoas):
+        self.pessoas = pessoas
+        self.distancia_total = distancia_total
+        self.grau_dificuldade = grau_dificuldade
+        self.localizacao = localizacao
+        self.nome_trilha = nome_trilha
+
+    def gamificar(self):
+        pontuacao = 0
+        for pessoa in self.pessoas:
+            if isinstance(pessoa, Familia):
+                pontuacao += 20
+            elif isinstance(pessoa, Amigos):
+                pontuacao += 15
+            elif isinstance(pessoa, Guia):
+                pontuacao -= 5
+            elif pessoa.idade < 18:
+                pontuacao += 10
+            elif pessoa > 10:
+                pontuacao -= 5
+
+class Pessoa:
+    def __int__(self, nome, idade, endereco):
+        self.nome = nome
+        self.idade = idade
+        self.endereco = endereco
+
+class Amigos(Pessoa):
+    def __init__(self, nome, idade, endereco):
+        super().__init__(self, nome, idade, endereco)
+
+class Familia(Pessoa):
+    def __init__(self, nome, idade, endereco):
+        super().__init__(self, nome, idade, endereco)
+
+class Guia(Pessoa):
+    def __init__(self, nome, idade, endereco, valor_medio):
+        super().__init__(self, nome, idade, endereco)
+        self.valor_medio = valor_medio
