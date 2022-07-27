@@ -1,0 +1,17 @@
+class Salario:
+    def __init__(self, valor_hora, qtd_hora, comissao):
+        self.valor_hora = valor_hora
+        self.qtd_hora = qtd_hora
+        self.comissao = comissao
+
+    def calculoSalario(self):
+        return (self.valor_hora * self.qtd_hora) + self.comissao
+
+class Funcionario:
+    def __init__(self, nome, idade, valor_hora, qtd_hora, comissao):
+        self.nome = nome
+        self.idade = idade
+        self.salario = Salario(valor_hora, qtd_hora, comissao)
+
+    def salariototal(self):
+        return self.salario.calculoSalario()
