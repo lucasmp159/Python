@@ -1,0 +1,23 @@
+from PySimpleGUI import PySimpleGUI as infinity
+
+# Layout - Tela
+infinity.theme('Reddit')
+colunaLinha = [
+    [infinity.Text('Login do Usuário'), infinity.Input(key='login', size=(20,1))],
+    [infinity.Text('Senha do Usuário'), infinity.Input(key='senha', password_char='*', size=(20,1))],
+    [infinity.Checkbox('Salvar Senha')],
+    [infinity.Button("Entrar"), infinity.Button("Sair")]
+]
+
+# Janela
+janela = infinity.Window('Tela de Login', colunaLinha)
+
+# Back - Eventos
+
+while True:
+    evento, valores = janela.read()
+    if evento == 'Sair':
+        break
+    if evento == 'Entrar':
+        if valores['login'] == 'Lucas' and valores['senha'] == '1234':
+            print('Você venceu dev!')
