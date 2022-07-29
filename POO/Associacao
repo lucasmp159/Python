@@ -15,3 +15,7 @@ class Funcionario:
 
     def salariototal(self):
         return self.salario.calculoSalario()
+
+funcionario1 = Funcionario('Chico', 30, 22, 160, 1500)
+
+print(f'Salário_total: {funcionario1.salariototal()}')
