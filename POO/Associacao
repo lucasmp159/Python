@@ -19,3 +19,61 @@ class Funcionario:
 funcionario1 = Funcionario('Chico', 30, 22, 160, 1500)
 
 print(f'Salário_total: {funcionario1.salariototal()}')
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+class Empresa:
+    def __init__(self, nome, cnpj, media_funcionarios, media_lucro_mes):
+        self.nome = nome
+        self.cnpj = cnpj
+        self.media_funcionarios = media_funcionarios
+        self.media_lucro_mes = media_lucro_mes
+
+    def valor_imposto(self):
+        return self.media_lucro_mes * 0.016
+
+
+class Prefeitura:
+    def __init__(self, cidade, prefeito):
+        self.cidade = cidade
+        self.prefeito = prefeito
+
+class Imposto:
+    def __init__(self):
+        self.impostos = []
+
+    def inserir_imposto(self, imposto):
+        self.impostos.append(imposto)
+
+    def coleta_impostos(self):
+        total = 0
+        for imposto in self.impostos:
+            total += imposto.valor_imposto()
+        return total
+
+class Prefeito:
+    def __init__(self, nome, cpf, formacao):
+        self.nome = nome
+        self.cpf = cpf
+        self.formacao = formacao
+
+coleta_imposto = Imposto()
+empresa1 = Empresa('Pesque Pague', '2312312321', 20, 12000)
+empresa2 = Empresa('Pague menos', '2312313421', 123, 2000)
+empresa3 = Empresa('Mercadin tiktok', '2311234621', 202, 23000)
+print(empresa1.nome, empresa1.cnpj, empresa1.media_funcionarios)
+coleta_imposto.inserir_imposto(empresa1)
+print('Imposto coletado empresa1:', empresa1.valor_imposto())
+print(empresa2.nome, empresa2.cnpj, empresa2.media_funcionarios)
+coleta_imposto.inserir_imposto(empresa2)
+print('Imposto coletado empresa2:', empresa2.valor_imposto())
+print(empresa3.nome, empresa3.cnpj, empresa3.media_funcionarios)
+coleta_imposto.inserir_imposto(empresa3)
+print('Imposto coletado empresa3:', empresa3.valor_imposto())
+prefeitura1 = Prefeitura('Fortaleza', 'Jose Zacarias')
+print('Cidade:', prefeitura1.cidade)
+print('Prefeito:', prefeitura1.prefeito)
+prefeito1 = Prefeito('José', '123142532', 'Politico')
+print('Nome:', prefeito1.nome,'CPF:', prefeito1.cpf,'Formação:', prefeito1.formacao)
+print('Valor total dos impostos coletados:', coleta_imposto.coleta_impostos())
