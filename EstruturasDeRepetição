@@ -12,3 +12,21 @@ while True:
         break
     else:
         print("Não existe vazamento")
+------------------------------------------
+------------------------------------------
+
+#Programa pra calcular distância percorrida
+direcao = input("Digite sua direção: ")
+distancia = 0
+distancia_percorrida = 0
+while True:
+    if direcao == 'siga em frente' or direcao == 'vire a esquerda' or direcao == 'vire a direita':
+        distancia += 0.1
+        direcao = input("Digite sua direção: ")
+    elif direcao == 'parar':
+        distancia_percorrida += distancia
+        print('Distância percorrida:',distancia_percorrida,'Km')
+        break
+    else:
+        print('Informação invalida.')
+        break
