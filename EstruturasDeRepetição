@@ -1,0 +1,14 @@
+#Calculo da quantidade de vazamento
+
+qtd_vazamento = int(input("Quantidade de vazamentos: "))
+qtd_total_vazada = 0
+
+while True:
+    if qtd_vazamento > 0:
+        litros_por_hora = int(input("Informe as horas: "))
+        qtd_total_vazada += litros_por_hora
+        qtd_vazamento -= 1
+    elif qtd_vazamento == 0:
+        break
+    else:
+        print("Não existe vazamento")
