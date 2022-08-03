@@ -1,3 +1,20 @@
+#numeros inteiros e poitivos
+
+inf = int(input("Digite um número inteiro e inf: "))
+sup = int(input("Digite um número inteiro e sup: "))
+count = 0
+while True:
+    count += 1
+    if inf <= count <= sup and count == 1:
+        print(f'{count}, não é primo')
+    elif inf <= count <= sup and (count == 2 or count == 3 or count == 5):
+        print(f'{count}, é primo')
+    elif inf <= count <= sup and (count % 2 == 0 or count % 3 == 0 or count % 5 == 0):
+        print(f"{count}, não é primo")
+    elif count > sup:
+        break
+------------------------------------------
+------------------------------------------
 #Calculo da quantidade de vazamento
 
 qtd_vazamento = int(input("Quantidade de vazamentos: "))
