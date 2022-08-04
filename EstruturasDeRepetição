@@ -47,3 +47,94 @@ while True:
     else:
         print('Informação invalida.')
         break
+        
+#Quantidade de homem x mulheres
+
+N = int(input("Digite o número de pessoas que moram na cidade: "))
+homem = 0
+mulher = 0
+for index in range(0,N):
+    S = int(input("Digite 1 para homem, 2 para mulher: "))
+    if S == 1:
+        homem += 1
+    elif S == 2:
+        mulher += 1
+    if index == (N-1):
+        print(f"Homens: {homem}")
+        print(f"Mulheres: {mulher}")
+        break
+
+#Calculando numero fatorial
+
+Num = int(input("Digite um número inteiro: "))
+multiplicador = 0
+resultado = 0
+
+for index in range(1,Num):
+    multiplicador = Num * index
+    resultado += multiplicador
+    print(f"{Num}!: {multiplicador}")
+    if index == (Num-1):
+        print(f"{Num}!: {resultado}")
+
+
+qtd_pessoa1 = 0
+qtd_pessoa2 = 0
+faixa1 = 0
+faixa2 = 0
+faixa3 = 0
+faixa4 = 0
+faixa5 = 0
+for index in range(0,15):
+    Idade_pessoa = int(input("Digite a idade da pessoa: "))
+    if Idade_pessoa <= 15:
+        faixa1 += 1
+    elif 16 < Idade_pessoa <= 30:
+        faixa2 += 1
+    elif 31 < Idade_pessoa <= 45:
+        faixa3 += 1
+    elif 46 < Idade_pessoa <= 60:
+        faixa4 += 1
+    elif 60 < Idade_pessoa:
+        faixa5 += 1
+
+    qtd_pessoa1 = float(faixa1 / 15)
+    print(f'porcentagem de pessoas na primeira faixa: {qtd_pessoa1}')
+    qtd_pessoa2 = float(faixa5 / 15)
+    print(f'porcentagem de pessoas na última faixa: {qtd_pessoa2}')
+
+#Sistema pra calcular notas
+
+qtd_notas = 0
+presenca = int(input("Digite número de aulas presente: "))
+media = 0
+Totalnotas = 0
+while True:
+    if qtd_notas <= 2:
+        Notas = float(input("Digite a nota: "))
+        qtd_notas += 1
+        Totalnotas += Notas
+        print(f"nota: {Notas}")
+    elif qtd_notas >= 3:
+        media = Totalnotas/3
+        print(f'A media Aritmetica: {media}')
+        break
+if media >= 6 and presenca >= 40:
+    print("Aluno Aprovado")
+else:
+    print("Aluno reprovado")
+'''
+#Lojinha
+
+Valor_final = 0
+desconto = 0
+porcentagem_desc = 0
+while True:
+    Compra = float(input("Digite o valor da Compra: "))
+    if Compra >= 500 and desconto <= 25:
+        desconto = int((Compra - 400)/100)
+        porcentagem_desc = desconto/100
+        Valor_final = Compra - (Compra * porcentagem_desc)
+        print(f'Valor final: R${Valor_final}')
+    else:
+        print(f'Valor final: {Compra}')
