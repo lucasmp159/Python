@@ -1,0 +1,99 @@
+#Campeonato de Surf
+
+class Atleta:
+    def __init__(self, nome, idade, pontuacao, categoria, ganhou):
+        self.nome = nome
+        self.idade = idade
+        self.pontuacao = pontuacao
+        self.categoria = categoria
+        self.ganhou = ganhou
+
+
+    def Permissao(self):
+        self.categoria = input("Digite a categoria do atleta: ")
+        if self.categoria == 'Lenda':
+            print("Atleta pode participar de todas as modalidades.")
+        elif self.categoria == 'Profissional':
+            print("Atleta só pode participar de Profissional e Amador.")
+        elif self.categoria == 'Amador':
+            print("Só pode participar da modalidade Amador.")
+        else:
+            print("Digite alguma categoria.")
+
+    def Pontuacao(self):
+        pontos = 0
+        if self.ganhou == True and self.categoria == 'Lenda':
+            self.pontuacao = pontos + 100
+            print(int(self.pontuacao))
+        elif self.ganhou == True and self.categoria == 'Profissional':
+            self.pontuacao = pontos + 50
+            print(int(self.pontuacao))
+        if self.ganhou == True and self.categoria == 'Amador':
+            self.pontuacao = pontos + 10
+            print(int(self.pontuacao))
+
+class Patrocinadores:
+    def __init__(self, nome, valor):
+        self.nome = nome
+        self.valor = valor
+
+class Lenda(Atleta,Patrocinadores):
+    def __int__(self, nome_camp, local, premiacao, patrocinadores, atletas):
+        self.nome_camp = nome_camp
+        self.local = local
+        self.premiacao = premiacao
+        self.patrocinadores = Patrocinadores
+        self.atletas = Atleta
+
+    def Permissao(self):
+        return print("O Atleta tem permissão para participar em todas as modalidades.")
+
+    def Pontuacao(self):
+        pontos = 0
+        if self.ganhou == True and self.categoria == 'Lenda':
+            self.pontuacao = pontos + 100
+            print(int(self.pontuacao))
+
+class Profissional(Atleta,Patrocinadores):
+    def __int__(self, nome_camp, local, premiacao, patrocinadores, atletas):
+        self.nome_camp = nome_camp
+        self.local = local
+        self.premiacao = premiacao
+        self.patrocinadores = Patrocinadores
+        self.atletas = Atleta
+
+    def Permissao(self):
+        return print("O Atleta tem permissão para participar nas modalidades Profissional e Amador.")
+
+    def Pontuacao(self):
+        pontos = 0
+        if self.ganhou == True and self.categoria == 'Profissional':
+            self.pontuacao = pontos + 50
+            print(int(self.pontuacao))
+
+class Amador(Atleta,Patrocinadores):
+    def __int__(self, nome_camp, local, premiacao, patrocinadores, atletas):
+        self.nome_camp = nome_camp
+        self.local = local
+        self.premiacao = premiacao
+        self.patrocinadores = patrocinadores
+        self.atletas = Atleta
+    def __repr__(self):
+        return f"{self.patrocinadores}"
+
+    def Permissao(self):
+        return print("O Atleta tem permissão para participar na modalidade Amador.")
+
+    def Pontuacao(self):
+        pontos = 0
+        if self.ganhou == True and self.categoria == 'Amador':
+            self.pontuacao = pontos + 10
+            print(int(self.pontuacao))
+
+atleta1 = Atleta('Joaoquim', 20, 0, 'Lenda', True)
+atleta1.Pontuacao()
+patrocinador1 = Patrocinadores('Coca-Cola', 2000)
+atleta2 = Amador('Xadrez', 'Fortaleza', 'PlayStation 5', patrocinador1, 'Joaquim')
+print(patrocinador1.nome)
+print(patrocinador1.valor)
+atleta2.Permissao()
