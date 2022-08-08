@@ -138,3 +138,14 @@ while True:
         print(f'Valor final: R${Valor_final}')
     else:
         print(f'Valor final: {Compra}')
+        
+        
+#Calculando numero fatorial
+
+Num = int(input("Digite um número inteiro: "))
+multiplicador = 1
+
+for index in range(Num,1,-1):
+    if index >= 1:
+        multiplicador *= index{Num} * {index} 
+        print(f"{Num}!= {multiplicador}")
