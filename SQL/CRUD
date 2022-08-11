@@ -1,0 +1,31 @@
+-- >  Exemplo de CRUD
+
+--> pip install  mysql-connector                               
+
+import mysql.connector
+
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='admin',
+    database='produto'
+)
+
+cursor = conexao.cursor()
+
+# C - CREATE - INSERT
+'''
+nome_produto = "Mouse"
+valor_produto = 50
+comandoSQL = f'insert into informatica (nome_produto, preco) values ("{nome_produto}", {valor_produto})'
+print("Deu bom")
+cursor.execute(comandoSQL)
+conexao.commit()
+'''
+# R - Read - Select
+comandoSQL = f'select * from informatica'
+cursor.execute(comandoSQL)
+selecao = cursor.fetchall()
+print(selecao)
+cursor.close()
+conexao.close()
