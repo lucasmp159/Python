@@ -21,16 +21,15 @@ class Atleta:
             print("Digite alguma categoria.")
 
     def Pontuacao(self):
-        pontos = 0
         if self.ganhou == True and self.categoria == 'Lenda':
-            self.pontuacao = pontos + 100
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 100
+            print(int(pontos))
         elif self.ganhou == True and self.categoria == 'Profissional':
-            self.pontuacao = pontos + 50
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 50
+            print(int(pontos))
         if self.ganhou == True and self.categoria == 'Amador':
-            self.pontuacao = pontos + 10
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 10
+            print(int(pontos))
 
 class Patrocinadores:
     def __init__(self, nome, valor):
@@ -49,10 +48,9 @@ class Lenda(Atleta,Patrocinadores):
         return print("O Atleta tem permissão para participar em todas as modalidades.")
 
     def Pontuacao(self):
-        pontos = 0
         if self.ganhou == True and self.categoria == 'Lenda':
-            self.pontuacao = pontos + 100
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 100
+            print(int(pontos))
 
 class Profissional(Atleta,Patrocinadores):
     def __int__(self, nome_camp, local, premiacao, patrocinadores, atletas):
@@ -66,10 +64,9 @@ class Profissional(Atleta,Patrocinadores):
         return print("O Atleta tem permissão para participar nas modalidades Profissional e Amador.")
 
     def Pontuacao(self):
-        pontos = 0
         if self.ganhou == True and self.categoria == 'Profissional':
-            self.pontuacao = pontos + 50
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 50
+            print(int(pontos))
 
 class Amador(Atleta,Patrocinadores):
     def __int__(self, nome_camp, local, premiacao, patrocinadores, atletas):
@@ -85,15 +82,14 @@ class Amador(Atleta,Patrocinadores):
         return print("O Atleta tem permissão para participar na modalidade Amador.")
 
     def Pontuacao(self):
-        pontos = 0
         if self.ganhou == True and self.categoria == 'Amador':
-            self.pontuacao = pontos + 10
-            print(int(self.pontuacao))
+            pontos = self.pontuacao + 10
+            print(int(pontos))
 
-atleta1 = Atleta('Joaoquim', 20, 0, 'Lenda', True)
+atleta1 = Atleta('Joaoquim', 20, 50, 'Lenda', True)
 atleta1.Pontuacao()
 patrocinador1 = Patrocinadores('Coca-Cola', 2000)
-atleta2 = Amador('Xadrez', 'Fortaleza', 'PlayStation 5', patrocinador1, 'Joaquim')
+atleta2 = Amador('Xadrez', 'Fortaleza', 'PlayStation 5', 'Coca-Cola', 'Joaquim')
 print(patrocinador1.nome)
 print(patrocinador1.valor)
 atleta2.Permissao()
