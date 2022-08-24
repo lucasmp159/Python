@@ -1,0 +1,45 @@
+import datetime
+
+class Veiculo:
+    def __int__(self, tipo_veic, placa, modelo, data_entrada,
+                hora_entrada, data_saida, hora_saida, valor):
+        self.__tipo_veic = tipo_veic
+        self.__placa = placa
+        self.__modelo = modelo
+        self.__data_entrada = datetime.date
+        self.__hora_entrada = hora_entrada
+        self.__data_saida = datetime.date
+        self.__hora_saida = hora_saida
+        self.__valor = valor
+
+    @property
+    def tipo_veic(self):
+        return self.__tipo_veic
+
+    @tipo_veic.setter
+    def tipo_veic(self, veiculo):
+        self.__tipo_veic = veiculo
+
+    @property
+    def placa(self):
+        return self.__placa
+
+    @placa.setter
+    def placa(self, veic_placa):
+        self.__placa = veic_placa
+
+    @property
+    def modelo(self):
+        return self.__modelo
+
+    @modelo.setter
+    def modelo(self, veic_modelo):
+        self.__modelo = veic_modelo
+
+    def valor_hora(self):
+        valor_hora = float(input("Favor inserir o valor da hora: "))
+        if self.__hora_entrada < self.__hora_saida and self.__data_saida > self.__data_entrada:
+            self.__valor = (self.__hora_saida - self.__hora_entrada) * valor_hora
+            print(f'O valor total a pagar será de {self.__valor}')
+        else:
+            print("Os horários estão incorretos")
