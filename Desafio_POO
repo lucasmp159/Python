@@ -38,3 +38,51 @@ class Guia(Pessoa):
     def __init__(self, nome, idade, endereco, valor_medio):
         super().__init__(self, nome, idade, endereco)
         self.valor_medio = valor_medio
+        
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+
+class Computador:
+    def __init__(self, Modelo, Fabricante, Processador, Memoria, TamanhoHD, OcupadoHD, Ligado):
+        self.Modelo = Modelo
+        self.Fabricante = Fabricante
+        self.Processador = Processador
+        self.Memoria = Memoria
+        self.TamanhoHD = TamanhoHD
+        self.OcupadoHD = OcupadoHD
+        self.Ligado = Ligado
+
+    def liga(self):
+        if self.Ligado == True:
+            print("O Computador está ligado")
+        else:
+            print("O Computador está desligado")
+
+    def desliga(self):
+        if self.Ligado == False:
+            print("O Computador está desligado")
+        else:
+            print("O Computador está ligado")
+
+    def limparHD(self):
+        limpar = float(input("Inserir espaço que deve ser liberado: "))
+        self.OcupadoHD = self.OcupadoHD - limpar
+        livre = self.TamanhoHD - self.OcupadoHD
+        if self.OcupadoHD >= 0:
+            print(f'O Espaço ocupado é de {self.OcupadoHD}Gb \n'
+                  f'O Espaço livre é de {livre}Gb')
+        else:
+            print("Não foi possivel apagar essa quantidade de dados")
+
+    def ocuparHD(self):
+        ocupar = float(input("Inserir espaço que vai ser ocupado no HD: "))
+        self.OcupadoHD = self.OcupadoHD + ocupar
+        print(f'O Espaço ocupado do HD sera de {self.OcupadoHD}')
+
+computador1 = Computador('Intel', 'Gigabyte', 'Intel Graphics', 4, 1000, 50, True)
+computador1.liga()
+computador1.ocuparHD()
+print('Espaço ocupado pelo HD: {}'.format(computador1.OcupadoHD))
+computador1.desliga()
+computador1.limparHD()
