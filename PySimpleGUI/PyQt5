@@ -1,0 +1,73 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow,QPushButton,QLabel
+
+#-- > Comando pip install PyQt5-tools
+#-- > pyuic5 -x janelaum.ui -o janelaum.py
+
+#CRIANDO A CLASSE - PARA A JANELA
+class Janela(QMainWindow):
+
+    #MÉTODO CONSTRUTOR
+    def __init__(self):
+        super().__init__()
+
+    #ATRIBUTOS
+        #ONDE ELE VAI APARECER.
+        self.topo = 300
+        self.esquerda = 650
+
+        #TAMANHO DA MINHA JANELA.
+        self.largura = 600
+        self.altura = 400
+        self.titulo = "Minha Primeira Janela"
+
+        #LABEL
+        self.label = QLabel(self)
+        self.label.setText("TEXTO")
+        self.label.setStyleSheet("Qlabel{font:bold;size:200px;color:#FFFFFF}")
+        self.label.move(200,0)
+        self.label.resize(200,70)
+
+        #Botão
+        botao = QPushButton('Click Aqui',self)
+        botau = QPushButton('Não Click Aqui', self)
+        #ONDE ELE VAI APARECER NA JANELA.
+        botao.move(200,150)
+        botau.move(200,70)
+        #DIMENSÃO DO BOTÃO
+        botao.resize(150,80)
+        botau.resize(150,80)
+
+        #BOTÃO NO ESTILO
+        botao.setStyleSheet('QPushButton{background-color:#00BFFF;font:bold;font-size:20px}')
+        botau.setStyleSheet('QPushButton{background-color:#00FFFF;font:bold;font-size:15px}')
+        #CLICK NO BOTÃO
+        botao.clicked.connect(self.clickbotao)
+        botau.clicked.connect(self.clickbotau)
+
+        self.carregarJanela()
+
+    # MÉTODOS
+    def clickbotao(self):
+        print("Você clicou!")
+
+    def clickbotau(self):
+        print("Você se lascou")
+
+    def carregarJanela(self):
+        #carregar todos os atributos de topo, esquerda, altura e largura
+        self.setGeometry(self.esquerda, self.topo, self.largura, self.altura)
+
+        #Aqui está o titulo da aplicação
+        self.setWindowTitle(self.titulo)
+
+        #exibir minha aplicação
+        self.show()
+
+#INICIO DA APLICAÇÃO
+
+    #CRIANDO O OBJETO
+app = QApplication(sys.argv)
+
+minhaJanelaUm = Janela()
+sys.exit(app.exec_())
