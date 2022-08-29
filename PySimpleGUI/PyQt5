@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow,QPushButton,QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow,QPushButton,QLabel,QRadioButton
 
 #-- > Comando pip install PyQt5-tools
 #-- > pyuic5 -x janelaum.ui -o janelaum.py
@@ -28,6 +28,26 @@ class Janela(QMainWindow):
         self.label.move(200,0)
         self.label.resize(200,70)
 
+        #RadioButton
+        self.radioButton = QRadioButton(self)
+        self.radioButton_2 = QRadioButton(self)
+        self.radioButton_3 = QRadioButton(self)
+
+        #Posição do button na tela
+        self.radioButton.move(50,20)
+        self.radioButton_2.move(50, 50)
+        self.radioButton_3.move(50, 80)
+
+        #Dimensão do Button
+        self.radioButton.resize(50,50)
+        self.radioButton_2.resize(50, 50)
+        self.radioButton_3.resize(50, 50)
+        #Selecione uma opção
+        self.radioButton.clicked.connect(self.clicou)
+        self.radioButton_2.clicked.connect(self.clicou)
+        self.radioButton_3.clicked.connect(self.clicou)
+
+
         #Botão
         botao = QPushButton('Click Aqui',self)
         botau = QPushButton('Não Click Aqui', self)
@@ -48,6 +68,15 @@ class Janela(QMainWindow):
         self.carregarJanela()
 
     # MÉTODOS
+    def clicou(self):
+        if self.radioButton.isChecked():
+            self.label.setText("Você selecionou a opção 1")
+        elif self.radioButton_2.isChecked():
+            self.label.setText("Você selecionou a opção 2")
+        else:
+            self.label.setText("Você selecionou a opção 3")
+    
+
     def clickbotao(self):
         print("Você clicou!")
 
