@@ -1,4 +1,4 @@
--- > Programa para calcular a pontuação do Guia de acordo com as caracteristicas e idades das pessoas.
+#-- > Programa para calcular a pontuação do Guia de acordo com as caracteristicas e idades das pessoas.
 class Trilha:
     def __init__(self, distancia_total, grau_dificuldade, localizacao, nome_trilha, pessoas):
         self.pessoas = pessoas
