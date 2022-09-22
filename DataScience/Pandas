@@ -23,3 +23,21 @@ serie.min()
 serie.median()
 
 type(serie)
+
+dicio = {
+    'Matricula': [123, 124, 125, 126, 127],
+    'Nome': ['Fernando', 'Gabriela', 'Jonas', 'Celina', 'Pedro'],
+    'Curso': ['Python', 'PHP', 'Marketing', 'Design', 'Metaverso'],
+    'Nota': [9.6, 6.7, 8.1, 6.0, 7.8]
+}
+
+
+df = pd.DataFrame(dicio)
+
+df
+
+df.shape
+df.ndim
+df.size
+df.describe()
+df.sort_values(by='Nota')
