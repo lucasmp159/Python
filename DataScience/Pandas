@@ -41,3 +41,20 @@ df.ndim
 df.size
 df.describe()
 df.sort_values(by='Nota')
+type(df)
+
+type(df['Curso'])
+df['Nota'] = df['Nota'] + 0.4
+
+df
+
+nba = pd.read_csv('Players.csv')
+
+nba.head(20)
+nba.tail(30)
+
+nba['collage'].value_counts()
+
+
+
+
