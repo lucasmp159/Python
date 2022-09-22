@@ -1,0 +1,95 @@
+'''
+função lambda
+
+# CTRL + ALT + L -- > Ajeitar a identação do código.
+# CTRL + / -- > Para comentar o texto marcado.
+
+def calcular(base, altura):
+    area = base * altura / 2
+
+    return area
+
+area = calcular(10, 15)
+
+print(area)
+
+area_t = lambda b, h: b * h / 2 # Utiliza lambda para definir uma função anonima.
+
+print(area_t(10, 15))
+'''
+
+# coluna = "MUNICIPIO" # Municipio
+# valor = '15,6' #Object
+#
+# resultado2 = lambda txt: txt.replace(',','.')
+#
+# resultado = lambda txt: txt.title()
+#
+# print(resultado(coluna))
+# print(resultado2(valor))
+
+# area_q = lambda l1, l2: l1 * l2
+#
+# print(area_q(10, 10))
+#
+# IMC = lambda p, a: p / a**2
+#
+# print(IMC(70, 1.76))
+#
+# area_t = lambda bma, bme, a: (bma + bme)* a/2
+#
+# print(area_t(10,6,3))
+
+# lados = [5, 8, 10, 6, 4, 11]
+#
+# def calcularAreas(lista):
+#     areas = []
+#
+#     for lado in lista:
+#         area = lado ** 2
+#
+#         areas.append(area)
+#
+#     return areas
+#
+# areas = calcularAreas(lados)
+#
+# print(f'Lista com as areas: {areas}')
+#
+# resultado = list(map(lambda l: l ** 2, lados))
+#
+# print(f'Lista usando map: {areas}')
+
+# bases = [5, 6, 7, 8, 9, 10]
+# alturas = [10, 11, 9, 10, 15, 20]
+#
+# def calcularAreas(bases, alturas):
+#     areas = []
+#
+#     count = 0
+#     while count < len(bases):
+#         area = (bases[count] * alturas[count]) / 2
+#
+#         areas.append(area)
+#         count += 1
+#
+#     return areas
+# areas = calcularAreas(bases, alturas)
+# print(f'Áreas dos triângulos: {areas}')
+#
+# resultado = list(map(lambda b, h: b * h / 2, bases, alturas))
+
+# print(f'Areas dos triângulos usando "map\": {resultado}')
+
+# cursos = ['PYTHON', 'METAVERSO', 'DESIGN', 'MARKETING']
+# 
+# textin = list(map(lambda txt: txt.lower(), cursos))
+# 
+# print(textin)
+# 
+# pesos = [70, 75, 80, 73, 66]
+# alturas = [1.8, 1.68, 2.01, 1.77, 1.5]
+# 
+# IMCs = list(map(lambda p, a: p/a **2, pesos, alturas))
+# 
+# print(IMCs)
