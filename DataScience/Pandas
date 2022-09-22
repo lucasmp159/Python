@@ -1,0 +1,25 @@
+import pandas as pd
+
+vetor = [10, 20, 35, 74]
+
+
+serie = pd.Series(vetor)
+#Número de linhas e colunas
+serie.shape
+
+#Quantidade de itens da série
+serie.size
+
+#Quantidade de dimensões
+serie.ndim
+
+#Retorna o maior valor da série
+serie.max()
+
+#Retorna o menor valor da série
+serie.min()
+
+#Retorna a media da série
+serie.median()
+
+type(serie)
