@@ -90,6 +90,6 @@ print(area_t(10, 15))
 # pesos = [70, 75, 80, 73, 66]
 # alturas = [1.8, 1.68, 2.01, 1.77, 1.5]
 # 
-# IMCs = list(map(lambda p, a: p/a **2, pesos, alturas))
+# IMCs = list(map(lambda p, a: round(p/a **2), pesos, alturas))
 # 
 # print(IMCs)
