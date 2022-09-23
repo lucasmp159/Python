@@ -1,0 +1,13 @@
+# Exemplo de função recursiva.
+def fatorial (number):
+    factorial = 1
+    for i in range(number, 1, -1):
+        factorial *= i
+    return factorial
+print(fatorial(5))
+
+def recursion_factorial(number):
+    if number == 1:
+        return
+    return number * fatorial(number - 1)
+print(recursion_factorial(5))
