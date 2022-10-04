@@ -129,8 +129,25 @@ while True:
     print(D1)
     print(media)
 
+#DESAFIO
+player1 = input("Inserir nome:  ")
+pontuacao1 = input("Inserir pontuação:  ")
+player2 = input("Inserir nome:  ")
+pontuacao2 = input("Inserir pontuação:  ")
+player3 = input("Inserir nome:  ")
+pontuacao3 = input("Inserir pontuação:  ")
 
+listapontos = list([pontuacao1, pontuacao2, pontuacao3])
+player = list([player1, player2, player3])
 
+def colocacao():
+    for i in listapontos:
+        listapontos.sort()
+        print(f'O primeiro lugar será  o que fez {listapontos[2]} pontos')
+        print(f'O segundo lugar será o que fez {listapontos[1]} pontos')
+        print(f'O terceiro lugar será o que fez {listapontos[0]} pontos')
+        break
+colocacao()
 
 
 
