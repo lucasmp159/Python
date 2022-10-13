@@ -1,0 +1,26 @@
+nome = input('Inserir nome do asteroide: ')
+value1 = int(input('Insira uma distância: '))
+value2 = int(input('Insira uma distância: '))
+value3 = int(input('Insira uma distância: '))
+value4 = int(input('Insira uma distância: '))
+value5 = int(input('Insira uma distância: '))
+
+dict = {
+    nome: [value1, value2, value3, value4, value5]
+}
+
+def CalculandoMedia():
+    total = sum(dict[nome])/5
+    print(f'{total}')
+CalculandoMedia()
+
+def AdicionandoDadosDict():
+    nome = input('Inserir nome do asteroide: ')
+    value1 = int(input('Insira uma distância: '))
+    value2 = int(input('Insira uma distância: '))
+    value3 = int(input('Insira uma distância: '))
+    value4 = int(input('Insira uma distância: '))
+    value5 = int(input('Insira uma distância: '))
+    dict.update({nome: [value1, value2, value3, value4, value5]})
+AdicionandoDadosDict()
+print(dict)
