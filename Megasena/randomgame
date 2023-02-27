@@ -24,7 +24,22 @@ for i in range (0, 6, 1):
     s = np.array([s])
     print(s,end='')
 
-# Sistema de verificação por meio de comparação.
+# Sistema de verificação de vencedor do jogo por meio da comparação entre arrays.
+pontos = 0
+if t[0] in s:
+    pontos += 1
+if t[1] in s:
+    pontos += 1
+if t[2] in s:
+    pontos += 1
+if t[3] in s:
+    pontos += 1
+if t[4] in s:
+    pontos += 1
+if t[5] in s:
+    pontos += 1
+print(pontos)
+# Para determinar o vencedor da MegaSena.
 print('\n',np.array_equal(t,s))
 if (np.array_equal(t,s) == True):
     print("Você gaaanhouuu!!")
