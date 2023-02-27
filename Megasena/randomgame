@@ -1,4 +1,6 @@
 import random
+import warnings
+
 import numpy as np
 
 print('Bem-vindo ao jogo da MegaSena, você precisa escolher 6 números')
@@ -8,40 +10,41 @@ while(count < 6):
     a = int(input('Escolha um número de 01 a 60:\n'))
     if (a <= 60):
         count += 1
-        t.append(a)
+        t.append(str(a))
     else:
         print('O número escolhido não é valido!!')
-t = np.array([t]) # Para transformar lista em array.
+t = np.array(t) # Para transformar lista em array.
 print('Os números escolhidos foram: \n',t)
-s = 0
-print('Os números sorteados foram: ')
+s = list()
+print('Os números sorteados foram: \n')
 for i in range (0, 6, 1):
     x = random.randrange(1,60,1)
     if (x <= 9):
-        s = '0' + str(x)
+        s.append('0' + str(x))
     else:
-        s = str(x)
-    s = np.array([s])
-    print(s,end='')
-
+        s.append(x)
+s = np.array(s)
+print(s,end='\n')
 # Sistema de verificação da pontuação do jogador por meio da comparação dos elementos entre arrays.
-pontos = 0
-if t[0] in s:
-    pontos += 1
-if t[1] in s:
-    pontos += 1
-if t[2] in s:
-    pontos += 1
-if t[3] in s:
-    pontos += 1
-if t[4] in s:
-    pontos += 1
-if t[5] in s:
-    pontos += 1
-print(pontos)
-# Para determinar o vencedor da MegaSena.
-print('\n',np.array_equal(t,s))
-if (np.array_equal(t,s) == True):
-    print("Você gaaanhouuu!!")
-else:
-    print("Você perdeu!!")
+with warnings.catch_warnings():
+    warnings.simplefilter(action='ignore', category=FutureWarning)
+    pontos = 0
+    if t[0] in s:
+        pontos += 1
+    if t[1] in s:
+        pontos += 1
+    if t[2] in s:
+        pontos += 1
+    if t[3] in s:
+        pontos += 1
+    if t[4] in s:
+        pontos += 1
+    if t[5] in s:
+        pontos += 1
+    print(pontos,end='')
+    # Para determinar o vencedor da MegaSena.
+    print('\n',np.array_equal(t,s))
+    if (np.array_equal(t,s) == True):
+        print("Você gaaanhouuu!!")
+    else:
+        print("Você perdeu!!")
