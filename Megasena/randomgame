@@ -1,13 +1,14 @@
 import random
 import numpy as np
 
-print('Escolha 6 números: ')
+print('Bem-vindo ao jogo da MegaSena, você precisa escolher 6 números')
 count = 0
-a = []
+t = list()
 while(count < 6):
-    a = input('Escolha um número de 01 a 60:')
+    a = input('Escolha um número de 01 a 60:\n')
     count += 1
-print('Os números escolhidos foram: \n', a)
+    t.append(a)
+print('Os números escolhidos foram: \n', t)
 
 
 print('Os números sorteados foram: ')
