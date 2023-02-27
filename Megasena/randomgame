@@ -1,0 +1,21 @@
+import random
+import numpy as np
+
+print('Escolha 6 números: ')
+count = 0
+a = []
+while(count < 6):
+    a = input('Escolha um número de 01 a 60:')
+    count += 1
+print('Os números escolhidos foram: \n', a)
+
+
+print('Os números sorteados foram: ')
+for i in range (0, 6, 1):
+    x = random.randrange(1,60,1)
+    if (x <= 9):
+        s = '0' + str(x)
+    else:
+        s = str(x)
+    s = np.array([s])
+    print(s,end='')
