@@ -24,7 +24,7 @@ for i in range (0, 6, 1):
     s = np.array([s])
     print(s,end='')
 
-# Sistema de verificação de vencedor do jogo por meio da comparação entre arrays.
+# Sistema de verificação da pontuação do jogador por meio da comparação dos elementos entre arrays.
 pontos = 0
 if t[0] in s:
     pontos += 1
