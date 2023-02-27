@@ -5,12 +5,15 @@ print('Bem-vindo ao jogo da MegaSena, você precisa escolher 6 números')
 count = 0
 t = list()
 while(count < 6):
-    a = input('Escolha um número de 01 a 60:\n')
-    count += 1
-    t.append(a)
-print('Os números escolhidos foram: \n', t)
-
-
+    a = int(input('Escolha um número de 01 a 60:\n'))
+    if (a <= 60):
+        count += 1
+        t.append(a)
+    else:
+        print('O número escolhido não é valido!!')
+print('Os números escolhidos foram: \n',t)
+t = np.array([t])
+s = 0
 print('Os números sorteados foram: ')
 for i in range (0, 6, 1):
     x = random.randrange(1,60,1)
@@ -20,3 +23,8 @@ for i in range (0, 6, 1):
         s = str(x)
     s = np.array([s])
     print(s,end='')
+
+pontos = 0
+if ((t == s).any()):
+    pontos += 1
+print('\n',pontos)
