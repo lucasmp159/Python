@@ -1,6 +1,5 @@
 import random
 import warnings
-
 import numpy as np
 
 print('Bem-vindo ao jogo da MegaSena, você precisa escolher 6 números')
@@ -16,15 +15,15 @@ while(count < 6):
 t = np.array(t) # Para transformar lista em array.
 print('Os números escolhidos foram: \n',t)
 s = list()
-print('Os números sorteados foram: \n')
+print('Os números sorteados foram: ')
 for i in range (0, 6, 1):
     x = random.randrange(1,60,1)
     if (x <= 9):
         s.append('0' + str(x))
     else:
-        s.append(x)
+        s.append(str(x))
 s = np.array(s)
-print(s,end='\n')
+print(s)
 # Sistema de verificação da pontuação do jogador por meio da comparação dos elementos entre arrays.
 with warnings.catch_warnings():
     warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -41,7 +40,7 @@ with warnings.catch_warnings():
         pontos += 1
     if t[5] in s:
         pontos += 1
-    print(pontos,end='')
+    print('Você acertou',pontos,'números')
     # Para determinar o vencedor da MegaSena.
     print('\n',np.array_equal(t,s))
     if (np.array_equal(t,s) == True):
