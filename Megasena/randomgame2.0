@@ -8,12 +8,12 @@ t = list()
 # Loop com as escolhas númericas do jogador.
 while count < 6:
     a = int(input('Escolha um número de 01 a 60:\n'))
+    if str(a) in t:
+        print('O número já foi utilizado.')
+        continue
     if a <= 9:
         count += 1
         t.append('0' + str(a))
-        myset = set(t)
-        if len(myset) != len(t):
-            print("número repetido.")
     if (a > 9) and (a <= 60):
         count += 1
         t.append(str(a))
@@ -56,3 +56,4 @@ with warnings.catch_warnings():
         print("Você gaaanhouuu!!")
     else:
         print("Você perdeu!!")
+
