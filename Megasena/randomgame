@@ -7,9 +7,12 @@ count = 0
 t = list()
 while(count < 6):
     a = int(input('Escolha um número de 01 a 60:\n'))
-    if (a <= 60):
+    if (a <= 9):
         count += 1
-        t.append(str(a))
+        t.append('0' + str(a))
+        if (a > 9) and (a <= 60):
+            count += 1
+            t.append(str(a))
     else:
         print('O número escolhido não é valido!!')
 t = np.array(t) # Para transformar lista em array.
@@ -47,3 +50,4 @@ with warnings.catch_warnings():
         print("Você gaaanhouuu!!")
     else:
         print("Você perdeu!!")
+
