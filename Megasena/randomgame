@@ -5,9 +5,10 @@ import numpy as np
 print('Bem-vindo ao jogo da MegaSena, você precisa escolher 6 números')
 count = 0
 t = list()
-while(count < 6):
+# Loop com as escolhas númericas do jogador.
+while count < 6:
     a = int(input('Escolha um número de 01 a 60:\n'))
-    if (a <= 9):
+    if a <= 9:
         count += 1
         t.append('0' + str(a))
         if (a > 9) and (a <= 60):
@@ -15,21 +16,23 @@ while(count < 6):
             t.append(str(a))
     else:
         print('O número escolhido não é valido!!')
-t = np.array(t) # Para transformar lista em array.
-print('Os números escolhidos foram: \n',t)
+t = np.array(t)  # Para transformar lista em array.
+print('Os números escolhidos foram: \n', t)
 s = list()
 print('Os números sorteados foram: ')
-for i in range (0, 6, 1):
-    x = random.randrange(1,60,1)
-    if (x <= 9):
+# loop com os números sorteados.
+for i in range(0, 6, 1):
+    x = random.randrange(1, 60, 1)
+    if x <= 9:
         s.append('0' + str(x))
     else:
         s.append(str(x))
 s = np.array(s)
 print(s)
-# Sistema de verificação da pontuação do jogador por meio da comparação dos elementos entre arrays.
+# Dependendo da versão do python precisa retirar o warning devido a um bug no numpy.
 with warnings.catch_warnings():
     warnings.simplefilter(action='ignore', category=FutureWarning)
+    # Sistema de verificação da pontuação do jogador por meio da comparação dos elementos entre arrays.
     pontos = 0
     if t[0] in s:
         pontos += 1
@@ -43,10 +46,10 @@ with warnings.catch_warnings():
         pontos += 1
     if t[5] in s:
         pontos += 1
-    print('Você acertou',pontos,'números')
+    print('Você acertou', pontos, 'números')
     # Para determinar o vencedor da MegaSena.
-    print('\n',np.array_equal(t,s))
-    if (np.array_equal(t,s) == True):
+    print('\n', np.array_equal(t, s))
+    if np.array_equal(t, s):
         print("Você gaaanhouuu!!")
     else:
         print("Você perdeu!!")
