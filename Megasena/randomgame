@@ -11,10 +11,10 @@ while count < 6:
     if a <= 9:
         count += 1
         t.append('0' + str(a))
-        if (a > 9) and (a <= 60):
-            count += 1
-            t.append(str(a))
-    else:
+    if (a > 9) and (a <= 60):
+        count += 1
+        t.append(str(a))
+    if a > 60:
         print('O número escolhido não é valido!!')
 t = np.array(t)  # Para transformar lista em array.
 print('Os números escolhidos foram: \n', t)
@@ -48,7 +48,7 @@ with warnings.catch_warnings():
         pontos += 1
     print('Você acertou', pontos, 'números')
     # Para determinar o vencedor da MegaSena.
-    print('\n', np.array_equal(t, s))
+    print('Checando se acertou todos os números:\n', np.array_equal(t, s))
     if np.array_equal(t, s):
         print("Você gaaanhouuu!!")
     else:
