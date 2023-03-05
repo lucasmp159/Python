@@ -26,6 +26,8 @@ print('Os números sorteados foram: ')
 # loop com os números sorteados.
 for i in range(0, 6, 1):
     x = random.randrange(1, 60, 1)
+    if str(x) in s:
+    continue
     if x <= 9:
         s.append('0' + str(x))
     else:
